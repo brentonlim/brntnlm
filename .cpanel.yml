@@ -1,0 +1,9 @@
+---
+
+      deployment:
+
+        tasks:
+
+          - export DEPLOYPATH=/home/xignmlrx/brntnlm.xyz
+
+          - /bin/cp -r * $DEPLOYPATH
