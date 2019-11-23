@@ -1,8 +1,68 @@
+<?php
+if(isset($_POST['email'])) {
+
+    $email_to = "blim.digital@gmail.com";
+
+    function died($error) {
+        // your error code can go here
+        echo "The following errors were found with the form you submitted: ";
+        echo $error."<br /><br />";
+        echo "Please go back and fix these errors.<br /><br />";
+        die();
+    }
+
+    // validation expected data exists
+    if(!isset($_POST['first_name']) ||
+        !isset($_POST['email']) ||
+        !isset($_POST['email_subject']) ||
+        !isset($_POST['message'])) {
+        died('We are sorry, but there appears to be a problem with the form you submitted.');
+    }
+
+    $first_name = $_POST['name']; // required
+    $email_from = $_POST['email']; // required
+    $email_subject = $_POST['email_subject']; //required
+    $message = $_POST['message']; // required
+
+    $error_message = "";
+    $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+
+    if(!preg_match($email_exp,$email_from)) {
+        $error_message .= 'The email address you entered does not appear to be valid.<br />';
+    }
+
+    $string_exp = "/^[A-Za-z .'-]+$/";
+
+    if(!preg_match($string_exp,$first_name)) {
+        $error_message .= 'The first name you entered does not appear to be valid.<br />';
+    }
+
+    if(strlen($message) < 2) {
+        $error_message .= 'The message you entered does not appear to be valid.<br />';
+    }
+
+    if(strlen($error_message) > 0) {
+        died($error_message);
+    }
+
+    $email_message = "Form details below.\n\n";
+
+
+    function clean_string($string) {
+        $bad = array("content-type","bcc:","to:","cc:","href");
+        return str_replace($bad,"",$string);
+    }
+
+    $email_message .= "First Name: ".clean_string($first_name)."\n";
+    $email_message .= "Email: ".clean_string($email_from)."\n";
+    $email_message .= "Message: ".clean_string($message)."\n";
+
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CONTACT</title>
+    <title>PORTFOLIO</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -38,16 +98,16 @@
     <nav id="colorlib-main-nav" role="navigation">
       <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
       <div class="js-fullheight colorlib-table">
-      	<div class="img" style="background-image: url(images/PROJECT-ROT1.jpg);"></div>
+      	<div class="img" style="background-image: url(images/ );"></div>
         <div class="colorlib-table-cell js-fullheight">
           <div class="row no-gutters">
             <div class="col-md-12 text-center">
               <h1 class="mb-4"><a href="index.html" class="logo">BRNTNLM</a></h1>
               <ul>
                 <li><a href="index.html"><span><small>01</small>Home</span></a></li>
-                <li><a href="about.html"><span><small>02</small>Resume</span></a></li>
+                <li class="active"><a href="about.html"><span><small>02</small>Resume</span></a></li>
                 <li><a href="portfolio.html"><span><small>03</small>Portfolio</span></a></li>
-                <li class="active"><a href="contact.html"><span><small>04</small>Contact</span></a></li>
+                <li><a href="contact.html"><span><small>04</small>Contact</span></a></li>
               </ul>
             </div>
           </div>
@@ -68,64 +128,22 @@
           </div>
         </div>
       </header>
-
-      <section class="ftco-section contact-section">
-        <div class="container mt-5">
-          <div class="row d-flex mb-5 contact-info">
-            <div class="col-md-12 mb-4">
-              <h2 class="h4">Contact</h2>
-            </div>
-            <div class="w-100"></div>
-            <div class="col-md-3">
-              <p><span>Address:</span><a href="tel://1234567920"> 123 Street Lane, Baltimore, MD 21234</a></p>
-            </div>
-            <div class="col-md-3">
-              <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
-            </div>
-            <div class="col-md-3">
-              <p><span>Email:</span> <a href="mailto:info@yoursite.com"> <br>blim.digital@gmail.com</a></p>
-            </div>
-          </div>
-
-          <div class="col-md-12 mb-4">
-            <h2 class="h4">Leave me a Message:</h2>
-          </div>
-
-          <div class="row block-9">
-            <div class="col-md-6 pr-md-5">
-              <form action="mailer.php" method="POST">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Name" name="name">
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Email" name="email">
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Subject" name="email_subject">
-                </div>
-                <div class="form-group">
-                  <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message" name="message"></textarea>
-                </div>
-                <div class="form-group">
-                  <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-                </div>
-              </form>
-            
-            </div>
-            <div class="col-md-6" id="map"></div>
-          </div>
-        </div>
-      </section>
       
+      <h3>Thanks for your message.</h3>
+
       <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container">
           <div class="row mb-5 justify-content-center">
             <div class="col-md-5 text-center">
               <div class="ftco-footer-widget mb-5">
                 <ul class="ftco-footer-social list-unstyled">
-                  <li><a href="https://github.com/brentonlim"><span class="icon-github"></span></a></li>
-                  <li class="ftco-animate"><a href="https://www.instagram.com/brent0box/"><span class="icon-instagram"></span></a></li>
+					<li><a href="https://github.com/brentonlim"><span class="icon-github"></span></a></li>
+                    <li><a href="https://www.instagram.com/brent0box/"><span class="icon-instagram"></span></a></li>
                 </ul>
+              </div>
+              <div class="ftco-footer-widget">
+                <h2 class="mb-3">Contact</h2>
+                <p class="h3 email"><a href="#">blim.digital@gmail.com</a></p>
               </div>
             </div>
           </div>
@@ -168,3 +186,7 @@
     
   </body>
 </html>
+
+<?php
+}
+?>

@@ -9,6 +9,7 @@ Referential Material & Sources:
 https://colorlib.com/wp/template/beckham/
 https://colorlib.com/wp/template/ilene-berg/
 
+
 [domain + hosting]
 namecheap.com
 --cpanel
