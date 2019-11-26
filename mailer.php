@@ -206,13 +206,13 @@ if(isset($_POST['email'])) {
             <div class="col-md-5 text-center">
               <div class="ftco-footer-widget mb-5">
                 <ul class="ftco-footer-social list-unstyled">
-					<li><a href="https://github.com/brentonlim"><span class="icon-github"></span></a></li>
+					          <li><a href="https://github.com/brentonlim"><span class="icon-github"></span></a></li>
                     <li><a href="https://www.instagram.com/brent0box/"><span class="icon-instagram"></span></a></li>
                 </ul>
               </div>
               <div class="ftco-footer-widget">
                 <h2 class="mb-3">Contact</h2>
-                <p class="h3 email"><a href="#">blim.digital@gmail.com</a></p>
+                <p class="h3 email"><a href="mailto:blim.digital@gmail.com">blim.digital@gmail.com</a></p>
               </div>
             </div>
           </div>
