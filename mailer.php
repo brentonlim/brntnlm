@@ -171,7 +171,7 @@ if(isset($_POST['email'])) {
         <div class="colorlib-table-cell js-fullheight">
           <div class="row no-gutters">
             <div class="col-md-12 text-center">
-              <h1 class="mb-4"><a href="index.html" class="logo">BRNTNLM</a></h1>
+              <h1 class="mb-4"><a href="../index.html" class="logo">BRNTNLM</a></h1>
               <ul>
                 <li><a href="index.html"><span><small>01</small>Home</span></a></li>
                 <li class="active"><a href="about.html"><span><small>02</small>Resume</span></a></li>
@@ -192,13 +192,15 @@ if(isset($_POST['email'])) {
               <div class="colorlib-navbar-brand">
                 <a class="colorlib-logo" href="index.html"><span class="logo-img" style="background-image: url(images/);"></span>BRNTNLM</a>
               </div>
+
+              <h3>Thanks for your message.</h3>
+
               <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
             </div>
           </div>
         </div>
       </header>
-      
-      <h3>Thanks for your message.</h3>
+    
 
       <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container">
@@ -208,6 +210,7 @@ if(isset($_POST['email'])) {
                 <ul class="ftco-footer-social list-unstyled">
 					          <li><a href="https://github.com/brentonlim"><span class="icon-github"></span></a></li>
                     <li><a href="https://www.instagram.com/brent0box/"><span class="icon-instagram"></span></a></li>
+                    <li><a href="https://www.behance.net/blimdigitaea6c"><span class="icon-behance"></span></a></li>
                 </ul>
               </div>
               <div class="ftco-footer-widget">
