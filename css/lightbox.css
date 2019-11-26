@@ -29,6 +29,10 @@ Source: https://www.w3schools.com/howto/howto_js_image_grid.asp
     width:250px;
   }
 
+  img.resizer{
+    height:750px;
+    width:750px;
+  }
   .center{
       display:block;
       margin-left: auto;
@@ -41,4 +45,17 @@ Source: https://www.w3schools.com/howto/howto_js_image_grid.asp
       max-width: 1000px;
       position: relative;
       margin: auto;
+  }
+
+  img.contain{
+  min-height: 100%;
+  min-width: 1024px;
+  
+  width: 100%;
+  height: auto;
+	 position: fixed;
+  top: 0;
+  left: 0;
+
+  object-fit: cover;
   }
