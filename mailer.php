@@ -25,11 +25,11 @@ if(isset($_POST['email'])) {
 
     // validation expected data exists
 
-    if(!isset($_POST['firstName']) ||
+    if(!isset($_POST['name']) ||
 
         !isset($_POST['email']) ||
 
-        !isset($_POST['emailSubject']) ||
+        !isset($_POST['email_subject']) ||
 
         !isset($_POST['message'])) {
 
@@ -39,11 +39,11 @@ if(isset($_POST['email'])) {
 
 
 
-    $firstName = $_POST['firstName']; // required
+    $firstName = $_POST['name']; // required
 
     $emailFrom = $_POST['email']; // required
 
-    $emailSubject = $_POST['emailSubject']; //required
+    $emailSubject = $_POST['email_subject']; //required
 
     $message = $_POST['message']; // required
 
