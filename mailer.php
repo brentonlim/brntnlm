@@ -1,4 +1,5 @@
 <?php
+
 if(isset($_POST['email'])) {
 
     $email_to = "blim.digital@gmail.com";
@@ -56,7 +57,8 @@ if(isset($_POST['email'])) {
     $email_message .= "First Name: ".clean_string($first_name)."\n";
     $email_message .= "Email: ".clean_string($email_from)."\n";
     $email_message .= "Message: ".clean_string($message)."\n";
-
+    
+    @mail($email_to, $email_subject, $email_message);
     ?>
 
 <!DOCTYPE html>
