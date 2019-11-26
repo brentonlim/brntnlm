@@ -90,7 +90,7 @@ if(isset($_POST['email'])) {
 
 
 
-    $emailMessage = "Form details below.\n\n";
+    $emailMessage = $message;
 
 
 
@@ -192,15 +192,60 @@ if(isset($_POST['email'])) {
               <div class="colorlib-navbar-brand">
                 <a class="colorlib-logo" href="index.html"><span class="logo-img" style="background-image: url(images/);"></span>BRNTNLM</a>
               </div>
-
-              <h3>Thanks for your message.</h3>
-
               <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
             </div>
           </div>
         </div>
       </header>
-    
+
+      <section class="ftco-section contact-section">
+        <div class="container mt-5">
+          <div class="row d-flex mb-5 contact-info">
+            <div class="col-md-12 mb-4">
+              <h2 class="h4">Contact</h2>
+            </div>
+            <div class="w-100"></div>
+            <div class="col-md-3">
+              <p><span>Address:</span><a href="tel://1234567920"> 123 Street Lane, Baltimore, MD 21234</a></p>
+            </div>
+            <div class="col-md-3">
+              <p><span>Phone:</span> <a href="tel://1234567920">+ 410/868-3001</a></p>
+            </div>
+            <div class="col-md-3">
+              <p><span>Email:</span> <a href="mailto:blim.digital@gmail.com"> <br>blim.digital@gmail.com</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-12 mb-4">
+            <h2 class="h4">Leave me a Message:</h2>
+          </div>
+
+          <div class="row block-9">
+            <div class="col-md-6 pr-md-5">
+              <form action="mailer.php" method="POST">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Name" name="name">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Email" name="email">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Subject" name="email_subject">
+                </div>
+                <div class="form-group">
+                  <textarea cols="30" rows="7" class="form-control" placeholder="Message" name="message"></textarea>
+                </div>
+                <div class="form-group">
+                  <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+                </div>
+              </form>
+            
+            </div>
+            <div class="col-md-6" id="map"></div>
+          </div>
+        </div>
+      </section>
+
 
       <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container">
