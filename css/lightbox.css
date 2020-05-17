@@ -30,8 +30,8 @@ Source: https://www.w3schools.com/howto/howto_js_image_grid.asp
   }
 
   img.resizer{
-    height:750px;
-    width:750px;
+    height:auto;
+    width:1000px;
   }
   .center{
       display:block;
