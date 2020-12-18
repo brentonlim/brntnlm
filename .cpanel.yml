@@ -2,5 +2,5 @@
 
       deployment:
         tasks:
-          - export DEPLOYPATH=/home/xignmlrx/brntnlm.xyz
+          - export DEPLOYPATH=/home/brntmxse/brntnlm.xyz
           - /bin/cp -r * $DEPLOYPATH
